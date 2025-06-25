@@ -26,7 +26,7 @@ from .models import Applicant
 from django.contrib.auth import get_user_model
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(
+    username = forms.EmailField(
         label="Email",
         max_length=100,
         widget=forms.EmailInput(attrs={

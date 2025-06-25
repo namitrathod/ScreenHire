@@ -13,8 +13,8 @@ from core.models import Application, InterviewSchedule
 from django import template
 from .forms import SignupForm
 from django.contrib.auth.hashers import make_password
-from django.http import JsonResponse
-
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import ensure_csrf_cookie
 from .forms import SignupForm
 from django.contrib.auth import login, get_backends
 
@@ -39,30 +39,39 @@ def login_required(role=None):
     return decorator
 
 # ---------- auth ----------
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import ensure_csrf_cookie
+
+@ensure_csrf_cookie
 def login_view(request):
     request.session.flush()
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data["email"]
+            username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
-            user = authenticate(request, email=email, password=password)
+            user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
                 request.session["user_id"] = user.id
                 request.session["role"] = user.role
-                if user.role == "ADMIN":
-                    return redirect("admin_dashboard")
-                elif user.role == "RECRUITER":
-                    return redirect("recruiter_dashboard")
-                elif user.role == "JOBSEEKER":
-                    return redirect("applicant_dashboard")
+                return JsonResponse({"success": True, "role": user.role})
             else:
-                messages.error(request, "Invalid email or password.")
+                # Return form errors in the response
+                return JsonResponse({
+                    "success": False,
+                    "error": "Invalid email or password.",
+                    "form_errors": form.errors
+                }, status=400)
+        else:
+            # Return form errors in the response
+            return JsonResponse({
+                "success": False,
+                "error": "Invalid form submission.",
+                "form_errors": form.errors
+            }, status=400)
     else:
-        form = LoginForm()
-        list(messages.get_messages(request))
-    return render(request, "core/login.html", {"form": form})
+        return HttpResponse("CSRF cookie set.")
 
 def logout_view(request):
     request.session.flush()
@@ -321,6 +330,10 @@ def recruiter_dashboard(request):
 # core/views.py (add at the bottom)
 
 
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import ensure_csrf_cookie
+
+@ensure_csrf_cookie
 def signup_view(request):
     if request.method == "POST":
         form = SignupForm(request.POST)
@@ -331,18 +344,15 @@ def signup_view(request):
             user.save()
             Applicant.objects.create(user=user)
 
-            # Manually attach backend
             backend = get_backends()[0]
             user.backend = f"{backend.__module__}.{backend.__class__.__name__}"
             login(request, user)
 
-            messages.success(request, "🎉 Signup successful! Welcome to the system.")
-            return redirect("login")  # Redirect to login page
+            return JsonResponse({"success": True, "message": "Signup successful!"})
+        else:
+            return JsonResponse({"success": False, "error": "Invalid form submission."}, status=400)
     else:
-        form = SignupForm()
-
-    return render(request, "core/signup.html", {"form": form})
-
+        return HttpResponse("CSRF cookie set.")
 
 def test_api(request):
     return JsonResponse({"message": "Backend is connected to React!"})

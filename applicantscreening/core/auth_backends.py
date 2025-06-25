@@ -21,7 +21,7 @@ class DBUserBackend(BaseBackend):
         # We don’t want to duplicate rows in auth_user – so we build an
         # in-memory user object that satisfies request.user.*
         DjangoUser = get_user_model()
-        dummy = DjangoUser(id=db_user.user_id, username=db_user.email,
+        dummy = DjangoUser(id=db_user.id, email=db_user.email,
                            is_staff=(db_user.role != "Job Seeker"),
                            is_superuser=(db_user.role == "Admin"))
         dummy.backend = "core.auth_backends.DBUserBackend"
@@ -30,7 +30,7 @@ class DBUserBackend(BaseBackend):
 
     def get_user(self, user_id):
         try:
-            return self.authenticate(None, DBUser.objects.get(user_id=user_id).email,
+            return self.authenticate(None, DBUser.objects.get(id=user_id).email,
                                      None)
         except DBUser.DoesNotExist:
             return AnonymousUser()
