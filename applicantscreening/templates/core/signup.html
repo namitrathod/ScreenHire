@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="signup-wrapper">
+    <div class="signup-card">
+        <h2>Create Your Account</h2>
+        <p class="signup-subtext">Sign up to start applying for jobs</p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="signup-message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" class="signup-form">
+            {% csrf_token %}
+            <label>Email:</label>
+            {{ form.email }}
+            <label>Password:</label>
+            {{ form.password }}
+            <label>Confirm Password:</label>
+            {{ form.confirm_password }}
+
+            <button type="submit" class="btn-signup">Sign Up</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

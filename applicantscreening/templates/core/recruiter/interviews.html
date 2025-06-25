@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% block title %}My Scheduled Interviews{% endblock %}
+
+{% block content %}
+<div class="interview-wrapper">
+    <h2 class="interview-heading">📅 My Scheduled Interviews</h2>
+
+    {% if its %}
+        <ul class="interview-list">
+            {% for interview in its %}
+                <li class="interview-card">
+                    <div class="interview-info">
+                        <div class="interview-title"><strong>{{ interview.job.title }}</strong></div>
+                        <div class="interview-applicant">👤 {{ interview.application.applicant.user.email }}</div>
+                        <div class="interview-date">📅 Date: {{ interview.date }}</div>
+                        <div class="interview-time">⏰ Time: {{ interview.time }}</div>
+                        <div class="interview-status">📌 Status: <span class="badge-status">{{ interview.status }}</span></div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-interviews">No interviews scheduled yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

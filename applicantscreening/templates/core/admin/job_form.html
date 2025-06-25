@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+{% block title %}Create New Job{% endblock %}
+
+{% block content %}
+<div class="create-job-wrapper">
+    <div class="create-job-card">
+        <h2 class="create-job-heading">📝 Create New Job</h2>
+
+        <form method="POST" class="create-job-form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="title">Job Title:</label>
+                <input type="text" name="title" required class="input-field">
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select name="department" required class="input-field">
+                    {% for dept in depts %}
+                        <option value="{{ dept.department_id }}">{{ dept.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="posted_date">Posted Date:</label>
+                <input type="date" name="posted_date" required class="input-field">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Job Description:</label>
+                <textarea name="description" rows="4" required class="input-field"></textarea>
+            </div>
+
+            <h3 class="criteria-heading">📋 Screening Criteria</h3>
+
+            <div class="form-group">
+                <label for="skills">Required Skills:</label>
+                <textarea name="skills" rows="3" required class="input-field"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="min_exp">Minimum Experience (years):</label>
+                <input type="number" name="min_exp" min="0" required class="input-field">
+            </div>
+
+            <div class="form-group">
+                <label for="qual">Minimum Qualification:</label>
+                <input type="text" name="qual" required class="input-field">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit-job">Create Job</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

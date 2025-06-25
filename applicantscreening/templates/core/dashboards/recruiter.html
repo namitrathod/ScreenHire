@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% block title %}Recruiter Dashboard{% endblock %}
+
+{% block content %}
+<div class="sidebar-layout">
+    <aside class="sidebar">
+        <h2 class="brand">JobHire</h2>
+        <ul>
+            <li><a href="{% url 'recruiter_dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'shortlisted' %}">Shortlisted</a></li>
+            <li><a href="{% url 'recruiter_interviews' %}">Interviews</a></li>
+            <li><a href="{% url 'recruiter_decisions' %}">Decisions</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-dashboard">
+        <h2 class="recruiter-heading">Welcome, {{ request.user.first_name|default:"Recruiter" }}</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Shortlisted Applicants</h3>
+                <p class="count count-blue">{{ shortlisted_count }}</p>
+            </div>
+            <div class="card">
+                <h3>Scheduled Interviews</h3>
+                <p class="count count-green">{{ interviews_count }}</p>
+            </div>
+            <div class="card">
+                <h3>Final Decisions</h3>
+                <p class="count count-purple">{{ decisions_count }}</p>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

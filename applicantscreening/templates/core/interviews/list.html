@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block title %}My Interviews{% endblock %}
+
+{% block content %}
+<div class="application-container">
+    <h2 style="margin-bottom: 1.5rem;">My Interviews</h2>
+
+    {% if its %}
+        {% for interview in its %}
+            <div class="application-card">
+                <h3>{{ interview.job.title }}</h3>
+                <p><strong>Date:</strong> {{ interview.date }}</p>
+                <p><strong>Time:</strong> {{ interview.time }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You have no upcoming or past interviews scheduled.</p>
+    {% endif %}
+</div>
+{% endblock %}

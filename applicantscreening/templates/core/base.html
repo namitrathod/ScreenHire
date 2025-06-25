@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Applicant System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <header class="topbar">
+        <div class="topbar-left">
+            <span class="logo">Applicant Screening & Hiring System</span>
+        </div>
+        <div class="topbar-right">
+            {% if request.session.role == "ADMIN" %}
+                <a href="{% url 'admin_dashboard' %}" class="btn-nav">Home</a>
+            {% elif request.session.role == "RECRUITER" %}
+                <a href="{% url 'recruiter_dashboard' %}" class="btn-nav">Home</a>
+            {% elif request.session.role == "JOBSEEKER" %}
+                <a href="{% url 'applicant_dashboard' %}" class="btn-nav">Home</a>
+            {% endif %}
+            <span class="welcome-msg">{{ user.email }}</span>
+            <a href="{% url 'logout' %}" class="btn-nav">Logout</a>
+        </div>
+    </header>
+    {% endif %}
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

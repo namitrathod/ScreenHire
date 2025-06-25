@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block title %}All Job Listings{% endblock %}
+
+{% block content %}
+<div class="jobs-section">
+    <h2>All Job Listings</h2>
+
+    {% if jobs %}
+        {% for job in jobs %}
+            <div class="job-card">
+                <div>
+                    <a>{{ job.title }}</a> — {{ job.department.name }}
+                    <div class="job-meta">Posted on: {{ job.posted_date }}</div>
+                </div>
+                <!-- Optional: Add edit/delete icons here later -->
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No job listings found.</p>
+    {% endif %}
+</div>
+{% endblock %}

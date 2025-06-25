@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% block title %}Schedule Interview{% endblock %}
+
+{% block content %}
+<div class="schedule-wrapper">
+    <div class="schedule-card">
+        <h2 class="schedule-heading">📅 Schedule Interview</h2>
+
+        <form method="post" class="schedule-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" name="time" required>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Confirm Schedule</button>
+                <a href="{% url 'shortlisted' %}" class="btn-secondary">← Back to Shortlisted</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

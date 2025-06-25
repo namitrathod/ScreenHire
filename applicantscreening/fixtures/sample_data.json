@@ -1,0 +1,28 @@
+[
+    {"model": "core.user", "pk": 1, "fields": {
+        "name":"System Admin","email":"admin@example.com",
+        "password":"admin123","role":"Admin"}},
+    {"model":"core.user","pk":2,"fields":{
+        "name":"Bob Recruiter","email":"recruiter@example.com",
+        "password":"recruit123","role":"HR Recruiter"}},
+    {"model":"core.user","pk":3,"fields":{
+        "name":"Alice Applicant","email":"alice@example.com",
+        "password":"alice123","role":"Job Seeker"}},
+  
+    {"model":"core.department","pk":1,"fields":{"name":"IT"}},
+    {"model":"core.department","pk":2,"fields":{"name":"HR"}},
+  
+    {"model":"core.recruiter","pk":2,"fields":{"department":1}},
+    {"model":"core.adminmanagement","pk":1,"fields":{"permissions":"all"}},
+  
+    {"model":"core.joblistings","pk":1,"fields":{
+        "recruiter":2,"department":1,
+        "title":"Backend Engineer","description":"Python/Django",
+        "salary":"90000.00","requirements":"python, django, postgres",
+        "posted_date":"2025-04-20"}},
+  
+    {"model":"core.screeningcriteria","pk":1,"fields":{
+        "job":1,"required_skills":"python,django",
+        "min_experience":2,"min_qualification":"Bachelors"}}
+  ]
+  

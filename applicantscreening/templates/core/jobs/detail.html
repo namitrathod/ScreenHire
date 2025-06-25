@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}Job Detail{% endblock %}
+
+{% block content %}
+<div class="job-detail-container">
+    <h2>{{ job.title }}</h2>
+    <p><strong>Department:</strong> {{ job.department.name }}</p>
+    <p><strong>Description:</strong> {{ job.description }}</p>
+    <p><strong>Salary:</strong> {{ job.salary }}</p>
+    <p><strong>Requirements:</strong> {{ job.requirements }}</p>
+
+    {% if applied %}
+        <div class="status-message already-applied">You have already applied for this job.</div>
+    {% else %}
+        <form method="get" action="{% url 'job_apply' job.job_id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-apply">Apply Now</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

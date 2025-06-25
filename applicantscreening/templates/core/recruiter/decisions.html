@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% block title %}Hiring Decisions{% endblock %}
+
+{% block content %}
+<div class="decision-wrapper">
+    <div class="decision-section">
+        <h2 class="decision-heading">✅ Final Hiring Decisions</h2>
+        {% if decisions %}
+            <ul class="decision-list">
+                {% for dec in decisions %}
+                    <li class="decision-card">
+                        <div><strong>{{ dec.applicant.user.email }}</strong> – {{ dec.job.title }}</div>
+                        <div>📌 Final Status: <span class="badge-status">{{ dec.final_status }}</span></div>
+                        <div>📅 Decision Date: {{ dec.decision_date }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-data">No hiring decisions made yet.</p>
+        {% endif %}
+    </div>
+
+    <div class="decision-section">
+        <h2 class="decision-heading">🕵️ Shortlisted but Undecided Applicants</h2>
+        {% if undecided_apps %}
+            <ul class="decision-list">
+                {% for app in undecided_apps %}
+                    <li class="decision-card">
+                        <div><strong>{{ app.applicant.user.email }}</strong> – {{ app.job.title }}</div>
+                        <div>
+                            <a href="{% url 'hire' app.pk %}" class="btn-decision">Hire</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-data">No undecided shortlisted applicants found.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block title %}My Applications{% endblock %}
+
+{% block content %}
+<div class="application-container">
+    <h2 style="margin-bottom: 1.5rem;">My Applications</h2>
+
+    {% if apps %}
+        {% for app in apps %}
+            <div class="application-card">
+                <h3>{{ app.job.title }}</h3>
+                <p><strong>Department:</strong> {{ app.job.department.name }}</p>
+                <p class="status {% if app.status == 'Selected' %}selected{% else %}pending{% endif %}">
+                    Status: {{ app.status }}
+                </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You haven't applied to any jobs yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

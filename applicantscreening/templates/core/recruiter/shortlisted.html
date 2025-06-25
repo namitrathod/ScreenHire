@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% block title %}Shortlisted Applicants{% endblock %}
+
+{% block content %}
+<div class="shortlisted-wrapper">
+    <h2 class="shortlisted-heading">📋 Shortlisted Applications</h2>
+
+    {% if apps %}
+        <ul class="shortlisted-list">
+            {% for app in apps %}
+                <li class="shortlisted-item">
+                    <div class="applicant-info">
+                        <span class="applicant-email">{{ app.applicant.user.email }}</span>
+                        <span class="job-title">— {{ app.job.title }}</span>
+                    </div>
+                    <a href="{% url 'view_application' app.application_id %}" class="view-btn">View Application</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-applicants">No shortlisted applicants yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

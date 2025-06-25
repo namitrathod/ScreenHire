@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="login-wrapper">
+    <div class="login-card">
+        <div class="login-icon">🔐</div>
+        <h2 class="login-heading">Sign in to your account</h2>
+        <p class="login-subtext">Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.email.label_tag }}{{ form.email }}
+            {{ form.password.label_tag }}{{ form.password }}
+
+            <button type="submit" class="btn-blue">Sign in</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

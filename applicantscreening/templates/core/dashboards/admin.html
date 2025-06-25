@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="sidebar-layout">
+    <aside class="sidebar">
+        <h2 class="brand">JobHire</h2>
+        <ul>
+            <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'admin_jobs' %}">All Jobs</a></li>
+            <li><a href="{% url 'job_add' %}">Create Job</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-dashboard">
+        <h2>Welcome, Admin</h2>
+    </main>
+</div>
+{% endblock %}

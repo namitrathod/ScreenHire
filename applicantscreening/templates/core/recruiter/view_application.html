@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% block title %}Application Details{% endblock %}
+
+{% block content %}
+<div class="app-detail-container">
+    <h2 class="app-detail-heading">📄 Application Details</h2>
+
+    <div class="app-detail-section">
+        <p><strong>👤 Applicant:</strong> {{ app.applicant.user.email }}</p>
+        <p><strong>💼 Job Title:</strong> {{ app.job.title }}</p>
+        <p><strong>📌 Status:</strong> {{ app.status }}</p>
+        <p><strong>🕒 Date Applied:</strong> {{ app.date_applied }}</p>
+    </div>
+
+    <hr>
+
+    <div class="app-detail-section">
+        <p><strong>📈 Experience:</strong> {{ app.applicant.experience }} years</p>
+        <p><strong>🛠️ Skills:</strong> {{ app.applicant.skills }}</p>
+        <p><strong>🎓 Education:</strong> {{ app.applicant.education }}</p>
+        <p><strong>📞 Contact Number:</strong> {{ app.applicant.contact_number }}</p>
+    </div>
+
+    <div class="app-action">
+        <a href="{% url 'schedule_interview' app.application_id %}" class="btn-schedule">
+            📅 Schedule Interview
+        </a>
+    </div>
+</div>
+{% endblock %}

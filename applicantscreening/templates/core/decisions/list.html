@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% block title %}Hiring Decisions{% endblock %}
+
+{% block content %}
+<div class="decision-container">
+    <h2 class="section-title">Application Decisions</h2>
+
+    {% if decs %}
+        <div class="card-grid">
+            {% for decision in decs %}
+                <div class="card decision-card">
+                    <h3>{{ decision.job.title }}</h3>
+                    <p><strong>Final Status:</strong> 
+                        <span class="status-label {{ decision.final_status|lower }}">{{ decision.final_status }}</span>
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-data">No decisions available yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

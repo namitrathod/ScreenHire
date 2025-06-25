@@ -1,0 +1,1479 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* HEADER */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+header nav {
+    margin-top: 1rem;
+}
+
+header nav a {
+    color: white;
+    font-weight: 500;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* LOGIN */
+/* .login-container {
+    background-color: white;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    min-width: 350px;
+    max-width: 400px;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.login-container input:focus {
+    border-color: #003366;
+    outline: none;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #003366;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-container button:hover {
+    background-color: #002244;
+} */
+/* Login Page */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-card {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2563eb;
+}
+
+.login-card h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.login-subtext {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.login-subtext a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-subtext a:hover {
+    text-decoration: underline;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+.login-form input {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 0.3rem;
+}
+
+.login-form input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-blue {
+    margin-top: 1rem;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-blue:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* DASHBOARD */
+.sidebar-layout {
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #1e293b;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 1.5rem 0;
+    padding-left: 10px;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    transition: color 0.2s ease;
+    
+}
+
+.sidebar ul li a:hover {
+    color: #60a5fa;
+}
+
+.main-dashboard {
+    margin-left: 220px;
+    padding: 2.5rem;
+    flex-grow: 1;
+    background-color: #f4f6f9;
+    /* min-height: 50vh; */
+}
+
+.main-dashboard h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    /* margin-bottom: 2rem; */
+}
+
+.card-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card .count {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.count.green {
+    color: #10b981;
+}
+
+.count.purple {
+    color: #8b5cf6;
+}
+
+
+/* JOB LISTINGS */
+.job-listing {
+    background: white;
+    margin: 1rem auto;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+}
+
+.job-listing h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.job-listing p {
+    margin: 0.5rem 0 0;
+}
+
+/* JOB DETAIL */
+.job-detail {
+    background: white;
+    padding: 2rem;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.job-detail h2 {
+    margin-bottom: 1rem;
+}
+
+.job-detail p {
+    margin: 0.5rem 0;
+}
+
+/* APPLICATIONS & INTERVIEWS */
+.section-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.section-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+ul.simple-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.simple-list li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f7f9fc;
+    border-left: 5px solid #003366;
+    border-radius: 6px;
+}
+
+/* JOB LIST PAGE (LIST VIEW) */
+.jobs-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.jobs-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #003366;
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.2s ease;
+    background-color: #f9fcff;
+}
+
+.job-card:hover {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+    background-color: #f0f7ff;
+}
+
+.job-card a {
+    color: #003366;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.job-card a:hover {
+    color: #005599;
+    text-decoration: underline;
+}
+
+.job-meta {
+    color: #444;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+/* JOB DETAIL PAGE */
+.job-detail-container {
+    max-width: 750px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.job-detail-container h2 {
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+.job-detail-container strong {
+    display: inline-block;
+    width: 120px;
+    color: #003366;
+}
+
+.job-detail-container p {
+    margin: 0.5rem 0;
+}
+
+.status-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #eaf5ea;
+    color: #207520;
+    border-left: 5px solid #3aaa35;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.status-message.already-applied {
+    background-color: #fef3f3;
+    color: #b40000;
+    border-left-color: #b40000;
+}
+.btn-apply {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.4rem;
+    background-color: #003366;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-apply:hover {
+    background-color: #002244;
+}
+/* MY APPLICATIONS STYLING */
+.application-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem;
+}
+
+.application-card {
+    background-color: white;
+    border-left: 6px solid #003366;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-3px);
+}
+
+.application-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #003366;
+}
+
+.application-card p {
+    margin: 0.4rem 0;
+}
+
+.application-card .status {
+    margin-top: 0.6rem;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.status.pending {
+    background-color: #fff4e5;
+    color: #a46400;
+    border-left: 4px solid #ffb84d;
+}
+
+.status.selected {
+    background-color: #eaf5ea;
+    color: #1d6b2f;
+    border-left: 4px solid #3aaa35;
+}
+.application-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem;
+}
+
+.application-card {
+    background-color: white;
+    border-left: 6px solid #003366;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-3px);
+}
+
+.application-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #003366;
+}
+
+.application-card p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+}
+.application-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem;
+}
+
+.application-card {
+    background-color: white;
+    border-left: 6px solid #003366;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-3px);
+}
+
+.application-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #003366;
+}
+
+.application-card p {
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+}
+.apply-form-container {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.apply-form-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+}
+
+.apply-form-container .job-title {
+    color: #003366;
+}
+
+.styled-form p {
+    margin-bottom: 1.5rem;
+}
+
+.styled-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.styled-form input,
+.styled-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.styled-form input:focus,
+.styled-form textarea:focus {
+    border-color: #003366;
+    outline: none;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #003366;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #002244;
+}
+/* Apply Form Styling */
+.apply-job-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.apply-card {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.apply-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.apply-card .highlight {
+    color: #003366;
+}
+
+.apply-form p {
+    margin-bottom: 1.4rem;
+}
+
+.apply-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.apply-form input,
+.apply-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.apply-form input:focus,
+.apply-form textarea:focus {
+    border-color: #003366;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 51, 102, 0.1);
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    background-color: #003366;
+    color: white;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #002244;
+}
+
+
+/* navbar */
+
+/* Top Navbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0e1a2b;
+    color: white;
+    padding: 0.8rem 2rem;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.topbar-left .logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.topbar-right .welcome-msg {
+    color: #c2d4f9;
+    font-weight: 500;
+}
+
+.btn-nav {
+    background-color: #2563eb;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: #1e40af;
+}
+/* Container layout */
+.sidebar-layout {
+    display: flex;
+    min-height: calc(100vh - 60px); /* minus topbar height if any */
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 240px;
+    background-color: #1c2635;
+    color: white;
+    padding: 1.5rem 1rem;
+    position: fixed;
+    top: 60px; /* adjust based on header height */
+    bottom: 0;
+    left: 0;
+}
+
+.sidebar .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Main dashboard area */
+.main-dashboard {
+    margin-left: 240px;
+    padding: 2rem;
+    width: calc(100% - 240px);
+    background-color: #f4f6f9;
+}
+
+.main-dashboard h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Dashboard card layout */
+.card-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.count {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.count.green {
+    color: #10b981;
+}
+
+.count.purple {
+    color: #8b5cf6;
+}
+
+.admin-dashboard-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.admin-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #003366;
+    font-weight: bold;
+}
+
+.admin-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.admin-btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.admin-btn:hover {
+    background-color: #1e40af;
+}
+/* Admin Dashboard Card Buttons */
+.btn-card {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-card:hover {
+    background-color: #1d4ed8;
+}
+
+
+.create-job-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.create-job-card {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 650px;
+}
+
+.create-job-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #003366;
+    font-weight: 700;
+}
+
+.criteria-heading {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.create-job-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.create-job-form label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #333;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.input-field:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.btn-submit-job {
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit-job:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-back-link {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.btn-back-link:hover {
+    text-decoration: underline;
+    color: #003366;
+}
+
+.recruiter-dash-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.recruiter-dash-card {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.recruiter-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 2rem;
+}
+
+.recruiter-links {
+    list-style: none;
+    padding: 0;
+}
+
+.recruiter-links li {
+    margin: 1rem 0;
+}
+
+.recruiter-links a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.recruiter-links a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+/* Recruiter heading override (optional) */
+.recruiter-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Button inside dashboard cards */
+.btn-card {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-card:hover {
+    background-color: #1d4ed8;
+}
+
+.count-blue {
+    color: #2563eb;
+}
+.count-green {
+    color: #10b981;
+}
+.count-purple {
+    color: #8b5cf6;
+}
+/* Shortlisted Page Styling */
+.shortlisted-wrapper {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.shortlisted-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    color: #003366;
+    margin-bottom: 2rem;
+}
+
+.shortlisted-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shortlisted-item {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #ccc;
+    border-left: 6px solid #2563eb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-color: #f9fcff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.applicant-info {
+    font-size: 1rem;
+    color: #003366;
+    font-weight: 500;
+}
+
+.applicant-email {
+    font-weight: bold;
+}
+
+.job-title {
+    color: #555;
+    margin-left: 0.5rem;
+}
+
+.view-btn {
+    background-color: #2563eb;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.no-applicants {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+/* Recruiter Interviews Page */
+.interview-wrapper {
+    max-width: 850px;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.interview-heading {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #003366;
+    font-weight: 600;
+}
+
+.interview-list {
+    list-style: none;
+    padding: 0;
+}
+
+.interview-card {
+    padding: 1.5rem;
+    border-left: 6px solid #2563eb;
+    margin-bottom: 1.5rem;
+    background-color: #f9fcff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.interview-info > div {
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+    color: #003366;
+}
+
+.badge-status {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.no-interviews {
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+}
+/* Hiring Decisions Page */
+.decision-wrapper {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.decision-section {
+    margin-bottom: 3rem;
+}
+
+.decision-heading {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #003366;
+    font-weight: bold;
+}
+
+.decision-list {
+    list-style: none;
+    padding: 0;
+}
+
+.decision-card {
+    background-color: #f9fcff;
+    border-left: 6px solid #2563eb;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.decision-card div {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: #003366;
+}
+
+.badge-status {
+    background-color: #10b981;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.no-data {
+    color: #777;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.btn-decision {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-decision:hover {
+    background-color: #1d4ed8;
+}
+
+.app-detail-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.app-detail-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 2rem;
+}
+
+.app-detail-section p {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.app-detail-section strong {
+    color: #003366;
+    width: 140px;
+    display: inline-block;
+}
+
+.app-action {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-schedule {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-schedule:hover {
+    background-color: #1d4ed8;
+}
+
+.schedule-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.schedule-card {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+}
+
+.schedule-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #003366;
+}
+
+.schedule-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.schedule-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #003366;
+}
+
+.schedule-form input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.schedule-form input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    color: #1d4ed8;
+}
+.message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.message.success {
+    background-color: #e6ffed;
+    border-left: 5px solid #2ecc71;
+    color: #1e6b3e;
+}
+.signup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-color: #f4f6f9;
+}
+
+.signup-card {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    max-width: 420px;
+    width: 100%;
+}
+
+.signup-card h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #003366;
+    margin-bottom: 0.5rem;
+}
+
+.signup-subtext {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 0.65rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.signup-form input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-signup {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-signup:hover {
+    background-color: #1d4ed8;
+}
+
+.signup-message {
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.signup-message.success {
+    background-color: #e6ffed;
+    border-left: 5px solid #22c55e;
+    color: #166534;
+}

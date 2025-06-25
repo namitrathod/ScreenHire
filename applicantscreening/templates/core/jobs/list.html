@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}Available Jobs{% endblock %}
+
+{% block content %}
+<div class="jobs-section">
+    <h2>Open Job Listings</h2>
+
+    {% if jobs %}
+        {% for job in jobs %}
+            <div class="job-card">
+                <div>
+                    <a href="{% url 'job_detail' job.job_id %}">{{ job.title }}</a>
+                </div>
+                <div class="job-meta">Department: {{ job.department.name }}</div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No jobs are currently available.</p>
+    {% endif %}
+</div>
+{% endblock %}
